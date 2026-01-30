@@ -1,2 +1,0 @@
-La premiere version de mon travail.
-Histoire de comprend les version sur git.
