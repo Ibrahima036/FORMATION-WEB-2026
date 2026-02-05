@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Encodage des caractères UTF-8 -->
+  <meta charset="UTF-8">
+  
+  <!-- Configuration responsive pour mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Description de la page pour le SEO -->
+  <meta name="description" content="Mon site permet de contacter les gens">
+  
+  <!-- Auteur de la page -->
+  <meta name="author" content="Ibrahima bah">
+  
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
+  <title>Page contact</title>
+</head>
+
+<body>
+  <!-- Titre principal de la page -->
+  <h1>Contactez-nous</h1>
+  
+  <!-- Formulaire de contact -->
+  <form method="post" action="#">
+    
+    <!-- Section : Informations personnelles -->
+    <label for="prenom">Prénom</label>
+    <input id="prenom" name="prenom" type="text" required placeholder="Ex : ibrahima bah">
+    
+    <label for="nom">Nom</label>
+    <input id="nom" type="text" name="nom" readonly>
+    
+    <br>
+    
+    <!-- Section : Identifiants de connexion -->
+    <label for="email">Email :</label>
+    <input id="email" type="email" name="email" placeholder="ex : test@gmail.com">
+    
+    <label for="password">Mot de passe :</label>
+    <input id="password" type="password" name="password">
+    
+    <br>
+    
+    <!-- Section : Préférences (Checkboxes) -->
+    <p>Choisissez les fruits que vous préférez ?</p>
+    
+    <input type="checkbox" id="fruit" name="fruit">
+    <label for="fruit">Pomme</label>
+    <br>
+    
+    <input type="checkbox" id="orange" name="orange">
+    <label for="orange">Orange</label>
+    
+    <br>
+    
+    <!-- Section : Sélection d'âge (Radio buttons) -->
+    <p>Quel âge avez-vous ?</p>
+    
+    <input type="radio" id="age18" name="age" value="18">
+    <label for="age18">18 ans</label>
+    <br>
+    
+    <input type="radio" id="age25" name="age" value="25">
+    <label for="age25">25 ans</label>
+    
+    <br>
+    
+    <!-- Section : Message de contact -->
+    <p>Contactez-nous</p>
+    
+    <label for="message">Écrivez votre message</label>
+    <textarea id="message" name="message" rows="5" cols="40"></textarea>
+    
+    <br>
+    
+    <!-- Section : Sélection de dates -->
+    <label for="date">Date :</label>
+    <input id="date" type="date" name="date">
+    
+    <label for="time">Heure :</label>
+    <input id="time" type="time" name="time">
+    
+    <br>
+    
+    <label for="mois">Mois :</label>
+    <input id="mois" type="month" name="mois">
+    
+    <label for="week">Semaine :</label>
+    <input id="week" type="week" name="week">
+    
+    <br>
+    
+    <!-- Section : Fichier et couleur -->
+    <label for="file">Fichier :</label>
+    <input id="file" type="file" name="file">
+    
+    <br>
+    
+    <label for="color">Couleur :</label>
+    <input id="color" type="color" name="color">
+    
+    <!-- Section : Valeurs numériques -->
+    <label for="progression">Progression :</label>
+    <input id="progression" type="range" name="progression" min="0" max="100">
+    
+    <label for="number">Numéro :</label>
+    <input id="number" type="number" name="number">
+    
+    <br>
+    
+    <!-- Section : Autres champs -->
+    <label for="tel">Téléphone :</label>
+    <input id="tel" type="tel" name="tel">
+    
+    <label for="search">Rechercher :</label>
+    <input id="search" type="search" name="search">
+    
+    <label for="url">URL :</label>
+    <input id="url" type="url" name="url">
+    
+    <!-- Champ masqué pour stocker des données invisibles -->
+    <input type="hidden" name="hidden_field">
+    
+    <br>
+    <hr>
+    
+    <!-- Boutons du formulaire -->
+    <button type="submit">Soumettre</button>
+    <button type="reset">Annuler</button>
+    <button type="button">Button</button>
+    
+  </form>
+</body>
+</html>
