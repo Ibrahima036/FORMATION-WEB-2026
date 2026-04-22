@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+  width: 350px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background: #2980b9;
+}
+
+.message {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.message.erreur {
+  color: #e74c3c;
+}
+.message.success {
+  color: #2ecc71;
+}
+
+input.valide {
+  border-color: #2ecc71;
+}
+input.invalide {
+  border-color: #e74c3c;
+}

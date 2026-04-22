@@ -1,73 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Titre et Paragraphe </title>
-</head>
-<br>
-  <h1>Titre 1</h1>
-  <h2>Titre 2</h2>
-  <h3>Titre 3</h3>
-  <h4>Titre 4</h4>
-  <h5>Titre 5</h5>
-  <h6>Titre 6</h6>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Validation Formulaire</title>
+  </head>
+  <body>
+    <form id="formulaire" novalidate>
+      <h1>Inscription</h1>
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" />
+      <small class="message" id="msg-nom"></small>
 
-  <strong>Permet de mettre le texte en gras</strong> <br />
-  <u>Permet de souligner le texte</u> <br/>
-  <i>Permet de mettre un texte en italique</i> <br>
-  <b>Permet de mettre le texte en gras.</b> <br/>
-  <em>Permet de mettre le texte en italique</em> <br/>
-  <mark>Permet de marquer mon texte</mark>
-  
-  <!-- Début de la section principale -->
-   <h1>Bienvenu chez nous</h1>
-   <p>Contenu de la page</p>
-   <!-- Fin de la section principale -->
+      <label for="email">Email</label>
+      <input type="email" id="email" />
+      <small class="message" id="msg-email"></small>
 
-   <!--Liste de definition-->
-   <dl>
-      <dt>Definition Html</dt>
-      <dd>Le HTML est un langage de balisage, qui nous de structurer une page web.</dd>
-      <dt>CSS</dt>
-      <dd>Description du CSS</dd>
-   </dl>
+      <label for="mdp">Mot de passe</label>
+      <input type="password" id="mdp" />
+      <small class="message" id="msg-mdp"></small>
 
-  <p>Lorem ipsum dolor <strong>sit amet consectetur adipisicing elit.</strong>  Delectus, accusamus a. Illum iure magnam magni accusantium, eligendi velit voluptates obcaecati ducimus
-     aliquam quod odit ratione possimus delectus! Assumenda, consectetur tempora.</p>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, accusamus a. Illum iure magnam magni accusantium, eligendi velit voluptates obcaecati ducimus
-     aliquam quod odit ratione possimus delectus! Assumenda, consectetur tempora.</p>
+      <label for="confirm">Confirmer le mot de passe</label>
+      <input type="password" id="confirm" />
+      <small class="message" id="msg-confirm"></small>
 
-     <!-- Les listes ordonnées et non ordonnées -->
-
-     <p>Liste non ordonnées</p>
-     <ul>
-        <li>Java</li>
-        <li>HTML</li>
-        <li>CSS</li>
-     </ul>
-     <p>Liste ordonnées</p>
-     <ol>
-      <li>Java</li>
-        <li>HTML</li>
-        <li>CSS</li>
-     </ol>
-     <hr />
-     <h3>Les tableaux</h3>
-     <table>
-      <caption>Liste des etudiants</caption>
-        <tr>
-          <th>Numero</th>
-          <th>Nom</th>
-          <th>Prénom</th>
-          <th>Age</th>
-        </tr>
-        <tr>
-          <td>#1</td>
-          <td>Bah</td>
-          <td>Ibrahima</td>
-          <td>12ans</td>
-        </tr>
-     </table>
-     <a href="/about.html" target="_blank" >Alle sur google</a>
-</body>
+      <button disabled id="btn" type="submit">S'inscrire</button>
+    </form>
+    <script src="index.js"></script>
+  </body>
 </html>
