@@ -1,96 +1,63 @@
-//Selectionner les élements
+// Menu burger
 
-const form = document.getElementById("formulaire");
-const nom = document.getElementById("nom");
-const email = document.getElementById("email");
-const mdp = document.getElementById("mdp");
-const confirm = document.getElementById("confirm");
-const btn = document.getElementById("btn");
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
 
-//ecouter l'evenenemt sur l'input
-
-//Validation en temps réel
-nom.addEventListener("input", validerNom);
-email.addEventListener("input", validerEmail);
-mdp.addEventListener("input", validerMdp);
-confirm.addEventListener("input", validerConfirm);
-
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const isValideNom = validerNom();
-  const isValideEmail = validerEmail();
-  const isValideMdp = validerMdp();
-  const isValideConfirm = validerConfirm();
-
-  if (isValideMdp && isValideConfirm && isValideEmail && isValideNom) {
-    alert("Le formulaire est soumis avec succès");
-    form.reset();
-    document
-      .querySelectorAll("input")
-      .forEach((i) => i.classList.remove("valide"));
-    document.querySelectorAll(".message").forEach((m) => (m.textContent = ""));
-  }
+burger.addEventListener("click", () => {
+  menu.classList.toggle("ouvert");
+  burger.classList.remove("actif");
 });
 
-function validerNom() {
-  if (nom.value.length < 3) {
-    afficherErreur(nom, "msg-nom", "Le nom doit faire au moins 3 caractères");
-    return false;
-  }
-  afficherSuccess(nom, "msg-nom");
-  return true;
+//Slide
+
+const slidesContainer = document.getElementById("slides");
+const slides = document.querySelectorAll(".slide");
+const btnPrev = document.getElementById("prev");
+const btnNext = document.getElementById("next");
+const pointsContainer = document.getElementById("points");
+
+const total = slides.length;
+let indexCourant = 0;
+
+//génerer dynamiquement des points
+
+slides.forEach((_, i) => {
+  const point = document.createElement("span");
+  point.classList.add("point");
+
+  if (i === 0) point.classList.add("actif");
+  point.addEventListener("click", () => aller(i));
+
+  pointsContainer.appendChild(point);
+});
+
+const points = document.querySelectorAll(".point");
+
+function aller(i) {
+  // Si on dépasse, on revient au début ou à la fin
+
+  if (i >= total) i = 0;
+  if (i < 0) i = total - 1;
+
+  indexCourant = i;
+
+  console.log(i);
+
+  // Décale la bande de slide vers la gauche
+  slidesContainer.style.transform = `translateX(-${i * 100}%)`;
+
+  points.forEach((p) => p.classList.remove("actif"));
+  points[i].classList.add("actif");
 }
 
-function afficherErreur(input, idMsg, texte) {
-  input.classList.add("invalide");
-  input.classList.remove("valide");
-  const msg = document.getElementById(idMsg);
-  msg.textContent = texte;
-  msg.className = " message erreur";
-}
+btnNext.addEventListener("click", () => aller(indexCourant + 1));
+btnPrev.addEventListener("click", () => aller(indexCourant - 1));
 
-function afficherSuccess(input, idMsg, texte = "✔ Valide") {
-  input.classList.add("valide");
-  input.classList.remove("invalide");
-  const msg = document.getElementById(idMsg);
-  msg.textContent = texte;
-  msg.className = " message sucess";
-}
+let auto = setInterval(() => aller(indexCourant + 1), 3000);
 
-function validerEmail() {
-  const v = email.value.trim();
+const slider = document.getElementById("slider");
 
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!regex.test(v)) {
-    afficherErreur(email, "msg-email", "Email invalide");
-    griserBtn();
-    return false;
-  }
-  afficherSuccess(email, "msg-email");
-  return true;
-}
-
-function validerMdp() {
-  if (mdp.value.length < 6) {
-    afficherErreur(mdp, "msg-mdp", "6 caracteres au minumus");
-    griserBtn();
-    return false;
-  }
-  afficherSuccess(mdp, "msg-mdp");
-  return true;
-}
-
-function validerConfirm() {
-  if (confirm.value === "" || confirm.value !== mdp.value) {
-    afficherErreur(confirm, "msg-confirm", "Les mots de passe diffèrent");
-    griserBtn();
-    return false;
-  }
-  afficherSuccess(confirm, "msg-confirm");
-  return true;
-}
-
-function griserBtn() {
-  btn.setAttribute("disabled", "disabled");
-}
+slider.addEventListener("mouseenter", () => clearInterval(auto));
+slider.addEventListener("mouseleave", () => {
+  auto = setInterval(() => aller(indexCourant + 1), 3000);
+});

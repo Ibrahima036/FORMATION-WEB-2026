@@ -1,32 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
-    <title>Validation Formulaire</title>
+    <title>Slider & Menu Burger</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <form id="formulaire" novalidate>
-      <h1>Inscription</h1>
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" />
-      <small class="message" id="msg-nom"></small>
+    <!-- ===== NAVIGATION AVEC MENU BURGER ===== -->
+    <nav class="navbar">
+      <div class="logo">MonSite</div>
+      <button class="burger" id="burger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" />
-      <small class="message" id="msg-email"></small>
+    <div class="slider" id="slider">
+      <div class="slides" id="slides">
+        <div class="slide" style="background: #3498db">Slide 1</div>
+        <div class="slide" style="background: #e74c3c">Slide 2</div>
+        <div class="slide" style="background: #2ecc71">Slide 3</div>
+        <div class="slide" style="background: #f39c12">Slide 4</div>
+      </div>
+      <button class="prev" id="prev">‹</button>
+      <button class="next" id="next">›</button>
+      <div class="points" id="points"></div>
+    </div>
 
-      <label for="mdp">Mot de passe</label>
-      <input type="password" id="mdp" />
-      <small class="message" id="msg-mdp"></small>
-
-      <label for="confirm">Confirmer le mot de passe</label>
-      <input type="password" id="confirm" />
-      <small class="message" id="msg-confirm"></small>
-
-      <button disabled id="btn" type="submit">S'inscrire</button>
-    </form>
     <script src="index.js"></script>
   </body>
 </html>
